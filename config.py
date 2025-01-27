@@ -20,7 +20,6 @@ model = os.getenv("AI_MODEL", "deepseek-reasoner")
 ai_api_baseurl = os.getenv("AI_API_BASEURL", "https://api.deepseek.com/v1")
 timeout = int(os.getenv("AI_TIMEOUT", "120"))
 max_tokens = int(os.getenv("MAX_TOKENS", "8192"))
-temperature = float(os.getenv("TEMPERATURE", "1"))
 system_prompt_unformatted = os.getenv(
     "AI_SYSTEM_PROMPT",
     """

@@ -72,8 +72,7 @@ Since this model is relatively new, it lacks a lot of features like vision, tool
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `AI_SYSTEM_PROMPT`            | The system prompt/instructions. Default: [click](https://github.com/Elehiggle/DeepSeekMattermostChatbot/blob/master/config.py) (Subject to change. current_time and CHATBOT_USERNAME variables inside the prompt will be auto-formatted and substituted.                      |
 | `AI_TIMEOUT`                  | The timeout for the AI API call in seconds. Default: "120"                                                                                                                                                                                                                    |
-| `MAX_TOKENS`                  | The maximum number of tokens to generate in the response. Default: "4096" (max)                                                                                                                                                                                               |
-| `TEMPERATURE`                 | The temperature value for controlling the randomness of the generated responses (0.0 = analytical, 1.0 = fully random). Default: "1"                                                                                                                                          | 
+| `MAX_TOKENS`                  | The maximum number of tokens to generate in the response. Default: "8192" (max)                                                                                                                                                                                               |
 | `TYPE_INDICATOR_MODE`         | "FULL" = typing indicator will be sent to main thread/channel and the subthread; "THREAD" = only to the subthread, unless there is none (this is kinda expected behaviour, but I prefer full). Default: "FULL"                                                                |
 | `MAX_RESPONSE_SIZE_MB`        | The maximum size of the website or file content to extract (in megabytes, per URL/file). Default: "100"                                                                                                                                                                       |
 | `FLARESOLVERR_ENDPOINT`       | Endpoint URL to your [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) instance (eg. "<http://192.168.1.55:8191/v1>"). If you use this, MAX_RESPONSE_SIZE_MB won't be honored since it can't stream content. For most effectiveness, use a residential IP endpoint | 
@@ -112,7 +111,7 @@ docker run -d --name chatbotdeepseek \
   -e AI_MODEL="deepseek-reasoner" \
   -e MATTERMOST_URL="mattermostinstance.example.com" \
   -e MATTERMOST_TOKEN="your_mattermost_token" \
-  -e MAX_TOKENS="4096" \
+  -e MAX_TOKENS="8192" \
   -e TEMPERATURE="1" \
   ghcr.io/elehiggle/deepseekmattermostchatbot:latest
 ```
