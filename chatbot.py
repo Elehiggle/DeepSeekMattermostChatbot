@@ -204,6 +204,11 @@ def handle_generation(current_message, messages, channel_id, root_id, initial_ti
         messages = ensure_compliant_messages(messages)
 
         handle_text_generation(current_message, messages, channel_id, root_id, initial_time)
+    except json.decoder.JSONDecodeError as e:
+        logger.error(f"Text generation error: {str(e)} {traceback.format_exc()}\nLikely API is down!")
+        driver.posts.create_post(
+            {"channel_id": channel_id, "message": f"Text generation error occurred: {str(e)}\nLikely AI API is down!", "root_id": root_id}
+        )
     except Exception as e:
         logger.error(f"Text generation error: {str(e)} {traceback.format_exc()}")
         driver.posts.create_post(
