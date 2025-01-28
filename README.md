@@ -112,7 +112,6 @@ docker run -d --name chatbotdeepseek \
   -e MATTERMOST_URL="mattermostinstance.example.com" \
   -e MATTERMOST_TOKEN="your_mattermost_token" \
   -e MAX_TOKENS="8192" \
-  -e TEMPERATURE="1" \
   ghcr.io/elehiggle/deepseekmattermostchatbot:latest
 ```
 

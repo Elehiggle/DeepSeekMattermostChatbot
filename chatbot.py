@@ -159,7 +159,6 @@ def handle_text_generation(current_message, messages, channel_id, root_id, initi
         max_tokens=max_tokens,
         messages=[{"role": "system", "content": system_instructions}, *messages],
         timeout=timeout,
-        temperature=temperature,
     )
 
     end_time = time.time()
